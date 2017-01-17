@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sports Fan Route</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="jumbofindertron">
+      <h1>Sports Fan </h1>
+      <h3>We can help find that perfect "Sports Watching Buddy"! </h3>
+      <hr>
+    </div>
+    <div class="row">
+
+      <div class="col-lg-12">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Find your Sports Friend</strong></h3>
+          </div>
+          <div class="panel-body">
+            <form action="" method="POST" role="form">
+
+              <div class="form-group">
+                <label for="">On a scale of 1-5, how much do you love sports? </label>
+                <input type="text" class="form-control" id="name" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">On a scale of 1-5, how much do you like the NFL?</label>
+                <input type="text" class="form-control" id="role" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">On a scale of 1-5, how much do you like the NBA?</label>
+                <input type="text" class="form-control" id="age" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">On a scale of 1-5, how much do you like the MLB?</label>
+                <input type="text" class="form-control" id="forcepoints" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">On a scale of 1-5, how much do you like the NHL?</label>
+                <input type="text" class="form-control" id="forcepoints" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">On a scale of 1-5, how much do you like the PGA Tour?</label>
+                <input type="text" class="form-control" id="forcepoints" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">On a scale of 1-5, how much do you like the Playoffs in any sport?</label>
+                <input type="text" class="form-control" id="forcepoints" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">On a scale of 1-5, how much do you like the Super Bowl?</label>
+                <input type="text" class="form-control" id="forcepoints" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">On a scale of 1-5, how much do you like the NBA Championship?</label>
+                <input type="text" class="form-control" id="forcepoints" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">On a scale of 1-5, how much do you like the World Series?</label>
+                <input type="text" class="form-control" id="forcepoints" placeholder="">
+              </div>
+
+            </form>
+            <br>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btn-md" id="addBtn"></span><span class="glyphicon glyphicon-fire"></span> Go Find that Sports Fan!</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+   
+    $("#addBtn").on("click", function() {
+      var newCharacter = {
+        name: $("#name").val().trim(),
+        role: $("#role").val().trim(),
+        age: $("#age").val().trim(),
+        forcePoints: $("#forcepoints").val().trim()
+      };
+
+      // Question: What does this code do??
+      $.post("http://localhost:3000/api/new", newCharacter)
+      .done(function(data) {
+        console.log(data);
+        alert("Adding character...");
+      });
+
+      return false;
+    });
+  </script>
+
+</body>
+</html>
