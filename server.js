@@ -16,3 +16,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.get("/survey", function (req, res) {
     res.sendFile(path.join(__dirname, "html-routes.js"));
 });
+
+app.listen(PORT, function () {
+  console.log("App listening on PORT " + PORT);
+});

@@ -99,7 +99,7 @@
         forcePoints: $("#forcepoints").val().trim()
       };
 
-      // Question: What does this code do??
+      
       $.post("http://localhost:3000/api/new", newCharacter)
       .done(function(data) {
         console.log(data);
