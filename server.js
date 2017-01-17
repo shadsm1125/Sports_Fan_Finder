@@ -13,6 +13,8 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
+
+
 app.get("/survey", function (req, res) {
     res.sendFile(path.join(__dirname, "html-routes.js"));
 });
